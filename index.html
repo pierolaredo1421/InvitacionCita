@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Salimos? 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div class="corazones" id="corazones" aria-hidden="true"></div>
+
+  <main class="tarjeta">
+
+    <!-- PASO 0: la pregunta -->
+    <section class="paso activo" id="paso0">
+      <div class="emoji-grande">💌</div>
+      <h1><span id="saludo">Hola</span>, ¿quieres tener una cita conmigo?</h1>
+      <p class="sub">Solo hay una respuesta correcta 😌</p>
+      <div class="botones">
+        <button class="btn si" id="btnSi" type="button">Sí 💕</button>
+        <button class="btn no" id="btnNo" type="button">No</button>
+      </div>
+    </section>
+
+    <!-- PASO 1: fecha -->
+    <section class="paso" id="paso1">
+      <div class="progreso"><span class="punto activo"></span><span class="punto"></span><span class="punto"></span><span class="punto"></span></div>
+      <h2>¡Sabía que dirías que sí! 🎉</h2>
+      <p class="sub">Ahora elige el día que más te guste</p>
+
+      <div class="calendario">
+        <div class="cal-cabecera">
+          <button class="cal-nav" id="mesAnterior" type="button" aria-label="Mes anterior">‹</button>
+          <span id="mesActual"></span>
+          <button class="cal-nav" id="mesSiguiente" type="button" aria-label="Mes siguiente">›</button>
+        </div>
+        <div class="cal-dias">
+          <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <div class="nav">
+        <button class="btn fantasma" data-atras="0" type="button">Atrás</button>
+        <button class="btn si" id="sigueFecha" type="button" disabled>Siguiente</button>
+      </div>
+    </section>
+
+    <!-- PASO 2: hora -->
+    <section class="paso" id="paso2">
+      <div class="progreso"><span class="punto"></span><span class="punto activo"></span><span class="punto"></span><span class="punto"></span></div>
+      <h2>¿A qué hora te recojo? ⏰</h2>
+      <p class="sub" id="resumenFecha"></p>
+      <div class="opciones" id="horas"></div>
+      <div class="nav">
+        <button class="btn fantasma" data-atras="1" type="button">Atrás</button>
+        <button class="btn si" id="sigueHora" type="button" disabled>Siguiente</button>
+      </div>
+    </section>
+
+    <!-- PASO 3: comida -->
+    <section class="paso" id="paso3">
+      <div class="progreso"><span class="punto"></span><span class="punto"></span><span class="punto activo"></span><span class="punto"></span></div>
+      <h2>¿Qué se te antoja comer? 🍽️</h2>
+      <p class="sub">Elige una (o la que más hambre te dé)</p>
+      <div class="comidas" id="comidas"></div>
+      <label class="nota">
+        ¿Algo más que quieras decirme?
+        <input type="text" id="notita" maxlength="120" placeholder="Opcional 💬">
+      </label>
+      <div class="nav">
+        <button class="btn fantasma" data-atras="2" type="button">Atrás</button>
+        <button class="btn si" id="sigueComida" type="button" disabled>Listo</button>
+      </div>
+    </section>
+
+    <!-- PASO 4: resumen -->
+    <section class="paso" id="paso4">
+      <div class="progreso"><span class="punto"></span><span class="punto"></span><span class="punto"></span><span class="punto activo"></span></div>
+      <h2>¡Es una cita! 💘</h2>
+      <div class="ticket" id="ticket">
+        <p class="ticket-titulo">Nuestra cita</p>
+        <div class="ticket-linea"><span>Día</span><strong id="tFecha"></strong></div>
+        <div class="ticket-linea"><span>Hora</span><strong id="tHora"></strong></div>
+        <div class="ticket-linea"><span>Comida</span><strong id="tComida"></strong></div>
+        <div class="ticket-linea" id="lineaNota" hidden><span>Nota</span><strong id="tNota"></strong></div>
+        <p class="ticket-pie">Cuenta regresiva: <span id="cuenta"></span></p>
+      </div>
+      <p class="sub">Mándame tu respuesta para que quede confirmada 💌</p>
+      <div class="nav centrado">
+        <a class="btn si" id="btnWhatsapp" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <button class="btn fantasma" id="btnCopiar" type="button">Copiar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
