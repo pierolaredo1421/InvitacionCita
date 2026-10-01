@@ -1,6 +1,6 @@
 // ================== CONFIGURA AQUÍ ==================
 const CONFIG = {
-  nombre: "Aracely",
+  nombre: "",
   telefono: "51904157671",
   horas: ["12:00 p. m.", "1:00 p. m.", "3:00 p. m.", "5:00 p. m.", "7:00 p. m.", "8:30 p. m."],
   comidas: [
